@@ -12,13 +12,19 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/Alertify.service';
+import { MemberListComponent } from './Member-list/Member-list.component';
+import { ListsComponent } from './Lists/Lists.component';
+import { MessagesComponent } from './Messages/Messages.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MemberListComponent,
+      ListsComponent,
+      MessagesComponent
    ],
    imports: [
       BrowserModule,
