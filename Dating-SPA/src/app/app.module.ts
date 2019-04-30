@@ -1,3 +1,6 @@
+import { AuthGuard } from './_guards/auth.guard';
+
+import { RouterModule } from '@angular/router';
 import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,6 +18,7 @@ import { AlertifyService } from './_services/Alertify.service';
 import { MemberListComponent } from './Member-list/Member-list.component';
 import { ListsComponent } from './Lists/Lists.component';
 import { MessagesComponent } from './Messages/Messages.component';
+import { appRoutes } from './routes';
 
 @NgModule({
    declarations: [
@@ -24,19 +28,21 @@ import { MessagesComponent } from './Messages/Messages.component';
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      AlertifyService
+      AlertifyService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent
